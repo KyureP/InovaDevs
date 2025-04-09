@@ -8,6 +8,9 @@
         <title>Esme Sweet Cake</title>
     </head>
     <body>
+      <dialog id="modal">
+        <p>Produto adicionado com sucesso! Em breve, ele será avaliado para ser disponibilizado em nossa loja. Agradecemos pela sua contribuição!</p>
+      </dialog>
         <!-- principal-->
         <header id="home" class="header">
             <div class="top-header">
@@ -18,7 +21,10 @@
                 <div class="top-header-inside">
                     <div class="search"></div>
                         <input type="text" placeholder="Pesquisar..." maxlength="30">
-                        <button onclick="alert('Pesquisa')">&#128269;</button>
+                        <button>&#128269;</button>
+                    </div>
+                    <div>
+                      <img class="carrinho-img" id="img-carrinho" src="./imagens/carrinho.png" alt="Carrinho de Compras">
                     </div>
                     <div class="profile">    
                         <a href="./login/login.html">
@@ -28,6 +34,18 @@
                 </div>
             </div>    
         </header> 
+
+        <!-- Carrinho de Compras -->
+        <div id="carrinho" class="carrinho">
+          <h2 class="titulo">Carrinho</h2>
+            <div class="produtos">
+           <!-- <p>Seu carrinho está vazio</p> -->
+            <ul>
+              
+            </ul>
+          </div>
+        </div>
+
         <nav>
             <ul class="menu-desktop">
                 <a href="#home" class="btn btn-dark">HOME</a>
@@ -46,43 +64,88 @@
             </section>
 
             <!-- Produtos -->
-            <h1 class="h2-abas">Produtos</h1>
+            <h1 class="h2-abas" id="prod">Produtos</h1>
+            <div class="adicionarProduto">
+              <a href="./adicionarProdutos/adicionarProd.html">
+              <button type="button" class="btn btn-addprod">Adicionar Produtos</button>
+              </a>
+              </div>
             <section id="produtos" class="produtos">
             <div class="row row-cols-1 row-cols-md-3 g-4">
               <div class="col">
-                <div class="card">
+                <div class="card" id="produto1">
                   <img src="./imagens/bolo1.jpeg" class="card-img-top" alt="001">
                   <div class="card-body">
-                    <h5 class="card-title">Bolo Decorado</h5>
+                    <h5 id="titulo1" class="card-title">Bolo Decorado</h5>
                     <p class="card-text">Fazemos bolos do sabor e decoração de sua preferência. Levamos elegância e suavidade para suas celebrações!</p>
+                    <div>
+                      <span id="preco1" class="preco">R$80.00</span>
+                    </div>
+                    
+                    <div>
+                      <img id="quantidade-menos1" class="menos" src="./imagens/menos.png">
+                      <span id="quantidade1" class="quantidade">1</span>
+                      <img id="quantidade-mais1" class="mais" src="./imagens/mais.png">
+                    </div>
+                     <button id="adicionar-carrinho1" class="botaoAddCarrinho">Adicionar ao Carrinho</button>
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="card">
+                <div class="card" id="produto2">
                   <img src="./imagens/bolo2.jpeg" class="card-img-top" alt="002">
                   <div class="card-body">
-                    <h5 class="card-title">Bolo Vulcão</h5>
+                    <h5 id="titulo2" class="card-title">Bolo Vulcão</h5>
                     <p class="card-text">Massa macia e recheio cremoso que transborda em cada fatia. Uma explosão de sabor irresistível! Os sabores são de sua escolha.             
                     </p>
+                    <div>
+                      <span id="preco2" class="preco">R$50.00</span>
+                    </div>
+                    
+                    <div>
+                      <img id="quantidade-menos2" class="menos" src="./imagens/menos.png">
+                      <span id="quantidade2" class="quantidade">1</span>
+                      <img id="quantidade-mais2" class="mais" src="./imagens/mais.png">
+                    </div>
+                    <button id="adicionar-carrinho2" class="botaoAddCarrinho">Adicionar ao Carrinho</button>
                   </div>
                 </div>
               </div>
-              <div class="col">
+              <div class="col" id="produto3">
                 <div class="card">
                   <img src="./imagens/bolo3.jpeg" class="card-img-top" alt="003">
                   <div class="card-body">
-                    <h5 class="card-title">Bolo de Ganache</h5>
+                    <h5 id="titulo3" class="card-title">Bolo de Ganache</h5>
                     <p class="card-text">Massa branca coberta com ganache de leite condensado e decorada com frutas frescas. Uma combinação perfeita!</p>
+                    <div>
+                      <span id="preco3" class="preco">R$60.00</span>
+                    </div>
+                    
+                    <div>
+                      <img id="quantidade-menos3" class="menos" src="./imagens/menos.png">
+                      <span id="quantidade3" class="quantidade">1</span>
+                      <img id="quantidade-mais3" class="mais" src="./imagens/mais.png">
+                    </div>
+                    <button id="adicionar-carrinho3" class="botaoAddCarrinho">Adicionar ao Carrinho</button>
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="card">
+                <div class="card" id="produto4">
                   <img src="./imagens/bolo4.jpeg" class="card-img-top" alt="004">
                   <div class="card-body">
-                    <h5 class="card-title">Bolo de Frutas</h5>
+                    <h5 id="titulo4" class="card-title">Bolo de Frutas</h5>
                     <p class="card-text">Massa leve com recheio de frutas da sua preferência e cobertura de chantilly. Um equilíbrio delicioso entre doce e ácido!</p>
+                    <div>
+                      <span id="preco4" class="preco">R$70.00</span>
+                    </div>
+                    
+                    <div>
+                    <img id="quantidade-menos4" class="menos" src="./imagens/menos.png">
+                    <span id="quantidade4" class="quantidade">1</span>
+                    <img id="quantidade-mais4" class="mais" src="./imagens/mais.png">
+                  </div>
+                  <button id="adicionar-carrinho4" class="botaoAddCarrinho">Adicionar ao Carrinho</button>
                   </div>
                 </div>
               </div>
@@ -97,7 +160,7 @@
                     <h1>Reserva</h1>
                     <p>Realizando a reserva online você <br>garante seu lugar com segurança!</p>
                 </div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdM69bxSaY18-9omn9NgYkte0Q4eEL1bvPyEly2qT72VUU1XQ/viewform">
+                <a href="reservamesa/pagReserva.html">
                     <button>
                     Clique aqui!
                     </button>
@@ -139,7 +202,8 @@
             </section>
         </main>
         <footer class="footer">Desenvolvido por InovaDevs</footer>
-    </body>
+        <script src="index.js"> </script>
+      </body>
     <!--        NOMES E RA's DO GRUPO
         Guilherme da Silva Gonçalves - 202202140465
         Giovanna Graço Soprano - 202403015951

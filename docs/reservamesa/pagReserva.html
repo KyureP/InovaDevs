@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pagReserva.css">
+    <link rel="shortcut icon" href="../imagens/Logo.jpeg" type="image/x-icon">
+    <title>Esme Sweet Cake</title>
+</head>
+<body>
+    <header id="home" class="header">
+        <div class="top-header">
+            <div class="logo">
+                <h1>Esme Sweet Cake</h1>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <h1>Reserve sua mesa aqui:</h1><br>
+        <form id="reservationForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Insira seu Nome" required>
+            <br>
+            <label for="peopleQtt">Quantidade de pessoas:</label>
+            <input type="number" id="peopleQtt" name="peopleQtt" placeholder="Insira a Quantidade" required>
+            <br>
+            <label for="reservationDate">Data:</label>
+            <input type="date" id="reservationDate" name="reservationDate" required>
+            <br>
+            <label for="reservationTime">Horário:</label>
+            <input type="time" id="reservationTime" name="reservationTime" required>
+            <br>
+            <label>Área do Estabelecimento:</label>
+            <input type="radio" id="areaInterno" name="area" value=A"Interno" checked>
+            <label for="areaInterno">Interno</label>
+            <input type="radio" id="areaExterno" name="area" value="Externo">
+            <label for="areaExterno">Externo</label>
+            <input type="radio" id="areaExternoCoberto" name="area" value="Externo Coberto">
+            <label for="areaExternoCoberto">Externo Coberto</label>
+            <br><br>
+            
+            <button type="submit" class="btn2"><span class="txtB">Enviar</span></button>
+            <div>
+                <button id="openModalBtn" class="btn2"><span class="txtB">Consultar Reservas</span></button>
+            </div>
+        </form><br>
+        <div class="button-container">
+            <a href="../index.html" class="btn">
+                <img src="../assets/img/home.png" alt="home" class="btn-img">
+            </a>
+        </div>
+
+        <div id="reservationModal" class="modal">
+            <div class="modal-content">
+                <h2>Lista de Reservas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Qtd Pessoas</th>
+                            <th>Data</th>
+                            <th>Horário</th>
+                            <th>Área</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservationList">
+                        <!-- Reservas serão inseridas aqui -->
+                    </tbody>
+                </table>
+                <br><br>
+                <button class="close-btn" id="closeModalBtn">Fechar</button>
+                <button class="close-btn" id="delete">Deletar</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">Desenvolvido por InovaDevs</footer>        
+    <script src="pagReserva.js"></script>
+</body>
+</html>

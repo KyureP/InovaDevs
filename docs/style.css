@@ -16,7 +16,7 @@ body {
     margin: 0;
 }
 
-
+/* Header */
 header {
     background-color: var(--primary-color);
     padding: 10px;
@@ -50,6 +50,12 @@ header {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+.carrinho-img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 }
 
 .profile {
@@ -89,6 +95,86 @@ header {
     margin-left: -1px;
 }
 
+/* Carrinho de Compras */
+.carrinho {
+    position: absolute;
+    background-color: #ffffff;
+    height: 430px;
+    z-index: 2;
+    left: 950px;
+    right: 200px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+}
+
+.carrinho.aberto {
+    visibility: visible;
+}
+
+.carrinho .produto {
+    display: flex;
+    align-items: center;
+}
+
+.carrinho .produto .produto-descricao {
+    padding: 0 10px;
+}
+
+.carrinho .produto .produto-descricao h2 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.carrinho ul {
+    padding: 0;
+}
+
+.carrinho .produto .produto-preco {
+    font-size: 13px;
+    color: #9c9c9c;
+}
+
+.carrinho .produto .produto-preco-total {
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+}
+
+.img-bolo {
+    width: 70px;
+    border-radius: 8px;
+}
+
+.carrinho .img-delete {
+    align-items: center;
+    width: 5px;
+    cursor: pointer;
+}
+
+.carrinho .titulo {
+    text-align: center;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.carrinho .produtos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+    color: #000000;
+    padding: 20px;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.carrinho .produtos li {
+    list-style: none;
+}
+
+
+/* Navigation */
 nav {
     margin: 20px 0;
     text-align: center;
@@ -119,6 +205,31 @@ nav {
     transform: translateY(-5px);
 }
 
+.adicionarProduto {
+    position: relative;
+    bottom: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adicionarProduto .btn {
+    right: 0;
+    text-decoration: none;
+    background-color: var(--button-hover);
+    color: var(--button-text-color);
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.adicionarProduto .btn:hover {
+    transform: translateY(-5px);
+}
+
+/* Promo Section */
 .promo {
     text-align: center;
     background-color: var(--secondary-color);
@@ -139,6 +250,7 @@ nav {
     color: var(--button-hover);
 }
 
+/* Cards */
 .row-cols-1 {
     display: grid;
     gap: 20px;
@@ -183,6 +295,36 @@ nav {
     padding: 5px;
 }
 
+.botaoAddCarrinho {
+    position: relative;
+    left: 40%;
+    bottom: 35px;
+    text-decoration: none;
+    background-color: var(--button-hover);
+    color: var(--button-text-color);
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.mais {
+    position: relative;
+    left: 5%;
+    cursor: pointer;
+}
+
+.menos {
+    cursor: pointer;
+}
+
+.quantidade {
+    position: absolute;   
+}
+
+
+/* Reservations */
 .reservas {
     color: #000;
     background-image: url(./assets/img/reserva.jpg);
@@ -213,6 +355,7 @@ nav {
     cursor: pointer;
 }
 
+/* FAQ Section */
 .faq {
     margin-bottom: 15px;
     border: 2px solid #ff5858;
@@ -227,6 +370,7 @@ nav {
     font-size: 1.2em;
 }
 
+/* About Section */
 .sobre {
     background-color: var(--secondary-color);
     padding: 20px;
@@ -248,6 +392,7 @@ nav {
     margin-bottom: 15px;
 }
 
+/* Footer */
 .footer {
     text-align: center;
     padding: 10px;
@@ -256,6 +401,7 @@ nav {
     color: var(--button-text-color);
 }
 
+/* Media queries para telas maiores */
 @media (min-width: 768px) {
     body {
         padding: 20px;
@@ -318,6 +464,35 @@ nav {
         flex: 0 1 auto; /* Volta ao tamanho automático para telas maiores */
         padding: 10px 20px;
         font-size: 1rem;
+    }
+
+    .adicionarProduto {
+        left: 75%;
+        transform: translateX(-75%);
+    }
+
+    .carrinho {
+        left: 20px;
+        right: 20px;
+        width: auto;
+        height: 400px;
+    }
+
+    .carrinho .produto .produto-descricao h2 {
+        font-size: 18px;
+    }
+
+    .carrinho .produto .produto-preco,
+    .carrinho .produto .produto-preco-total {
+        font-size: 14px;
+    }
+
+    .img-bolo {
+        width: 60px;
+    }
+
+    .carrinho .produtos {
+        height: 250px;
     }
 
     .produtos {
